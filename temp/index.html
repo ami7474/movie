@@ -1,0 +1,39 @@
+
+{% extends 'base.html' %}
+{% block body %}
+<div class="container-fluid" >
+    <div class="row">
+        {% for i in film %}
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{i.img.url}}"  width="250" height="450">
+  <div class="card-body">
+    <h5 class="card-title">{{i.name}}</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="{% url  'movieapp:details' i.id %}" class="btn btn-primary">{{i.id}} {{i.name}}</a>
+
+  </div>
+</div>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<br>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
